@@ -14,6 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
+        android:background="@color/trasparent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +23,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:padding="24dp">
 
             <!-- Top illustration / logo area -->
@@ -31,6 +33,7 @@
                 android:layout_height="220dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="6dp"
+                android:background="@color/trasparent"
                 app:cardUseCompatPadding="true"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,22 +46,11 @@
                     <!-- Replace @drawable/mainimage with your asset -->
                     <ImageView
                         android:id="@+id/ivHeader"
-                        android:layout_width="331dp"
+                        android:layout_width="match_parent"
                         android:layout_height="169dp"
                         android:contentDescription="Pizza header"
                         android:scaleType="centerCrop"
                         android:src="@drawable/pizzabg" />
-
-                    <TextView
-                        android:id="@+id/tvWelcome"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|start"
-                        android:layout_margin="16dp"
-                        android:text="Welcome back!"
-                        android:textColor="@android:color/black"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
 
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -114,6 +106,7 @@
                             style="@style/Widget.MaterialComponents.Chip.Choice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+
                             android:text="User"
 
                             android:checkable="true" />
@@ -175,17 +168,18 @@
                         android:textSize="12sp" />
 
                     <!-- Sign in -->
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnSignIn"
-                        android:layout_width="168dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:textAlignment="center"
-
-                        android:text="SIGN IN"
-                        android:textAllCaps="true" />
 
                     <!-- divider -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSignIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="SIGN IN"
+
+                        android:textAlignment="center"
+                        android:textAllCaps="true" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -238,7 +232,7 @@
                             android:iconPadding="8dp"
                             android:text="Facebook"
                             app:iconGravity="textStart"
-                            android:drawableStart="@drawable/ic_facebook" />
+                             />
 
                     </LinearLayout>
 
@@ -262,6 +256,7 @@
                 android:text="By signing in you agree to our Terms of Service"
                 android:textSize="12sp"
                 android:layout_marginTop="12dp"
+
                 app:layout_constraintTop_toBottomOf="@id/cardForm"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
