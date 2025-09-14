@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">pizzamania</string>
+    <string-array name="branches">
+        <item>Colombo</item>
+        <item>Galle</item>
+    </string-array>
 </resources>
