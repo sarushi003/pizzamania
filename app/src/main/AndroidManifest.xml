@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzamania">
         <activity
+            android:name=".OrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".cart_item_rowActivity"
             android:exported="true">
             <intent-filter>
@@ -19,8 +22,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- Launcher Activity (App starts here) -->
+        </activity> <!-- Launcher Activity (App starts here) -->
         <activity
             android:name=".Splash_Page_Activity"
             android:exported="true">

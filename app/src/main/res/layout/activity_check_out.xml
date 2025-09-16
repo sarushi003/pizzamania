@@ -7,14 +7,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient"
-    tools:context=".CheckoutActivity">
+    tools:context=".Check_outActivity">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarCheckout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/transparent"
         android:theme="@style/ThemeOverlay.Material3.ActionBar"
         app:title="Checkout"
         app:titleTextColor="@android:color/black"
@@ -72,7 +71,7 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@drawable/ic_pizza"
+                            android:src="@drawable/veg"
                             android:scaleType="centerCrop"
                             android:contentDescription="Pizza" />
 
@@ -98,7 +97,7 @@
                         </LinearLayout>
 
                         <TextView
-                            android:text="Rs. 1200"
+                            android:text="Rs. 2200"
                             android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -197,7 +196,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Total: Rs. 1200"
+            android:text="Total: Rs. 2200"
             android:textSize="16sp"
             android:textStyle="bold" />
 

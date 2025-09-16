@@ -50,7 +50,9 @@
                 android:layout_marginTop="8dp"
                 android:text="Orders"
                 android:textSize="15sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:layout_width="5dp"
+                android:layout_height="5dp"/>
         </LinearLayout>
 
         <!-- Menu -->
@@ -77,7 +79,9 @@
                 android:layout_marginTop="8dp"
                 android:text="Menu"
                 android:textSize="15sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:layout_height="5dp"
+                android:layout_width="5dp"/>
         </LinearLayout>
 
         <!-- Customers -->
@@ -104,7 +108,9 @@
                 android:layout_marginTop="8dp"
                 android:text="Customers"
                 android:textSize="15sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:layout_height="5dp"
+                android:layout_width="5dp"/>
         </LinearLayout>
 
         <!-- Reports -->
@@ -131,7 +137,9 @@
                 android:layout_marginTop="8dp"
                 android:text="Reports"
                 android:textSize="15sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:layout_height="5dp"
+                android:layout_width="5dp"/>
         </LinearLayout>
 
     </GridLayout>

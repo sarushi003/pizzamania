@@ -119,7 +119,7 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/Widget.MaterialComponents.Chip"
+                style="@style/MaterialAlertDialog.Material3.Body.Text"
                 android:id="@+id/chip_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -211,7 +211,6 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
-        app:menu="@menu/bottom_nav_menu"
         android:background="@drawable/nav_background"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
