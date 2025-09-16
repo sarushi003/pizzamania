@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Card appearance only (no layout_* attributes here) -->
+
     <style name="ProfileCard">
         <item name="android:background">@drawable/card_bg</item>
         <item name="android:padding">12dp</item>

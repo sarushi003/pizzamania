@@ -4,22 +4,18 @@
     android:viewportWidth="24"
     android:viewportHeight="24">
 
-    <!-- Background Circle -->
     <path
         android:fillColor="#FFF3E0"
         android:pathData="M12,0a12,12 0 1,1 0,24a12,12 0 0,1 0,-24z"/>
 
-    <!-- Head with subtle gradient tone -->
     <path
         android:fillColor="#FFAB91"
         android:pathData="M12,5a3,3 0 1,1 0,6a3,3 0 0,1 0,-6z"/>
 
-    <!-- Shoulders with smoother curve -->
     <path
         android:fillColor="#FF8A65"
         android:pathData="M6,18c0,-2.2 2,-4 6,-4s6,1.8 6,4v2H6v-2z"/>
 
-    <!-- Inner shadow for depth -->
     <path
         android:fillColor="#00000022"
         android:pathData="M6,20h12v1H6v-1z"/>
