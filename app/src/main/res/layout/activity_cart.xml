@@ -105,7 +105,7 @@
                     android:textSize="18sp" />
             </LinearLayout>
 
-            <!-- You can add more items dynamically here -->
+            <!-- can add more items  -->
         </LinearLayout>
     </ScrollView>
 
