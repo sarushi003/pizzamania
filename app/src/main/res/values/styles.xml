@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card appearance only (no layout_* attributes here) -->
+    <style name="ProfileCard">
+        <item name="android:background">@drawable/card_bg</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:elevation">3dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">56dp</item>
+    </style>
+</resources>
