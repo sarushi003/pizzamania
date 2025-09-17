@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "70328625438",
+    "project_id": "pizzamaniya-4e03c",
+    "storage_bucket": "pizzamaniya-4e03c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70328625438:android:4e11479ce4d99069e2c10f",
+        "android_client_info": {
+          "package_name": "com.example.pizzamania"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA54z1Mw0K3hvtQZ5QKGoyi4SsCrFZVdtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
