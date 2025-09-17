@@ -58,6 +58,6 @@
             android:text="Checkout"
             android:icon="@drawable/ic_checkout"
             app:iconGravity="textStart"
-            android:iconPadding="8dp"/>
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

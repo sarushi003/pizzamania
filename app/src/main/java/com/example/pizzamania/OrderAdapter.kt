@@ -16,7 +16,7 @@ class OrderAdapter(
 ) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.order_item, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.order_item_row, parent, false)
         return OrderViewHolder(view)
     }
 
@@ -54,8 +54,8 @@ class OrderAdapter(
     fun getTotalSelected(): Int = calculateTotal()
 
     class OrderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvNameQty: TextView = view.findViewById(R.id.tvOrderNameQty)
-        val tvPrice: TextView = view.findViewById(R.id.tvOrderPrice)
-        val btnSelect: MaterialButton = view.findViewById(R.id.btnSelectOrder)
+        val tvNameQty: TextView = view.findViewById(R.id.tvQuantity3)
+        val tvPrice: TextView = view.findViewById(R.id.tvOrderItemPrice3)
+        val btnSelect: MaterialButton = view.findViewById(R.id.btnIncrease3)
     }
 }

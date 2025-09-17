@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,10 +33,10 @@
                     android:id="@+id/ivOrderItem1"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/bg_card"
+                    android:background="@android:color/transparent"
                     android:contentDescription="Order Item"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_food_placeholder" />
+                    android:src="@drawable/ic_launcher_foreground" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -72,8 +73,15 @@
                         android:id="@+id/btnDecrease1"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         android:padding="0dp"
                         android:text="-"
+                        android:textAllCaps="false"
                         android:textSize="20sp" />
 
                     <TextView
@@ -88,8 +96,15 @@
                         android:id="@+id/btnIncrease1"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         android:padding="0dp"
                         android:text="+"
+                        android:textAllCaps="false"
                         android:textSize="20sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -116,10 +131,10 @@
                     android:id="@+id/ivOrderItem2"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/bg_card"
+                    android:background="@android:color/transparent"
                     android:contentDescription="Order Item"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_food_placeholder" />
+                    android:src="@drawable/ic_launcher_foreground" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -156,8 +171,15 @@
                         android:id="@+id/btnDecrease2"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         android:padding="0dp"
                         android:text="-"
+                        android:textAllCaps="false"
                         android:textSize="20sp" />
 
                     <TextView
@@ -172,8 +194,15 @@
                         android:id="@+id/btnIncrease2"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         android:padding="0dp"
                         android:text="+"
+                        android:textAllCaps="false"
                         android:textSize="20sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -200,10 +229,10 @@
                     android:id="@+id/ivOrderItem3"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/bg_card"
+                    android:background="@android:color/transparent"
                     android:contentDescription="Order Item"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_food_placeholder" />
+                    android:src="@drawable/ic_launcher_foreground" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -240,8 +269,15 @@
                         android:id="@+id/btnDecrease3"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         android:padding="0dp"
                         android:text="-"
+                        android:textAllCaps="false"
                         android:textSize="20sp" />
 
                     <TextView
@@ -256,10 +292,49 @@
                         android:id="@+id/btnIncrease3"
                         android:layout_width="36dp"
                         android:layout_height="36dp"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
                         android:padding="0dp"
                         android:text="+"
+                        android:textAllCaps="false"
                         android:textSize="20sp" />
                 </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Total row -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Total:"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTotalAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total: Rs. 0"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

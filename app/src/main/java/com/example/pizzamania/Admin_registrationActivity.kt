@@ -21,9 +21,8 @@ class AdminRegistrationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_admin_registration) // your XML file
+        setContentView(R.layout.activity_admin_registration)
 
-        // Initialize views
         etBranch = findViewById(R.id.etAdminBranch)
         etEmail = findViewById(R.id.etAdminEmail)
         etPassword = findViewById(R.id.etAdminPassword)
@@ -31,55 +30,38 @@ class AdminRegistrationActivity : AppCompatActivity() {
         btnRegister = findViewById(R.id.btnAdminRegister)
         tvLogin = findViewById(R.id.tvAdminLogin)
 
-        // Register button click
-        btnRegister.setOnClickListener {
-            registerAdmin()
-        }
-
-        // Login text click
+        btnRegister.setOnClickListener { registerAdmin() }
         tvLogin.setOnClickListener {
-            // Navigate to login activity
-            val AdminLoginActivity = Unit
-            val intent = Intent(this, AdminLoginActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, LoginPageActivity::class.java))
             finish()
         }
     }
 
     private fun registerAdmin() {
-        val branch = etBranch.text.toString().trim()
-        val email = etEmail.text.toString().trim()
-        val password = etPassword.text.toString().trim()
-        val confirmPassword = etConfirmPassword.text.toString().trim()
+        val branch = etBranch.text?.toString()?.trim().orEmpty()
+        val email = etEmail.text?.toString()?.trim().orEmpty()
+        val password = etPassword.text?.toString()?.trim().orEmpty()
+        val confirmPassword = etConfirmPassword.text?.toString()?.trim().orEmpty()
 
-        // Validation
         if (branch.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             return
         }
-
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, "Please enter a valid email", Toast.LENGTH_SHORT).show()
             return
         }
-
         if (password != confirmPassword) {
             Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             return
         }
-
         if (password.length < 6) {
             Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // TODO: Save admin data to your backend / database
         Toast.makeText(this, "Admin registered successfully!", Toast.LENGTH_SHORT).show()
-
-        // Optionally redirect to login or dashboard
-        val AdminLoginActivity = Unit
-        val intent = Intent(this, AdminLoginActivity::class.java)
-        startActivity(intent)
+        startActivity(Intent(this, LoginPageActivity::class.java))
         finish()
     }
 }

@@ -2,196 +2,134 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/homeRoot"
+    android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <!-- Top row: greeting + profile -->
-    <LinearLayout
-        android:id="@+id/topRow"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
+    <!-- Header -->
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:contentDescription="Profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvHello"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"/>
-
-            <TextView
-                android:id="@+id/tvSubHello"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="What would you like to eat today?"
-                android:textSize="13sp"
-                android:textColor="#E8F0FF"
-                android:layout_marginTop="2dp"/>
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:src="@drawable/ic_profile"
-            android:background="@drawable/profile_circle_bg"
-            android:padding="8dp"/>
-    </LinearLayout>
-
-    <!-- Search box -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/searchCard"
+    <TextView
+        android:id="@+id/tvHello"
+        android:text="Hello, User!"
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="12dp"
-        app:cardCornerRadius="14dp"
-        app:cardElevation="4dp"
-        android:background="@drawable/search_card_bg"
-        app:layout_constraintTop_toBottomOf="@id/topRow"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/ivProfile"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp">
+    <TextView
+        android:id="@+id/tvSubHello"
+        android:text="What would you like to eat today?"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvHello"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivProfile"
+        android:layout_marginTop="4dp"/>
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_search"
-                android:contentDescription="search" />
-
-            <EditText
-                android:id="@+id/etSearch"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:hint="Search pizza, sides, drinks..."
-                android:paddingStart="12dp"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
-
-            <ImageView
-                android:id="@+id/ivFilter"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/ic_filter"
-                android:contentDescription="filter"
-                android:padding="6dp"
-                android:background="@drawable/btn_small_bg"/>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Categories (horizontal chips) -->
-    <HorizontalScrollView
-        android:id="@+id/horizontalCategories"
+    <!-- Search -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:fillViewport="false"
-        android:overScrollMode="never"
-        app:layout_constraintTop_toBottomOf="@id/searchCard"
+        app:layout_constraintTop_toBottomOf="@id/tvSubHello"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSearch"
+            android:hint="Search pizzas, sides, drinks"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Categories -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:singleSelection="true"
+        app:layout_constraintTop_toBottomOf="@id/tilSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_all"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="All"
+            android:checked="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"/>
 
-            <TextView
-                style="@style/MaterialAlertDialog.Material3.Body.Text"
-                android:id="@+id/chip_all"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/category_chip_bg"
-                android:padding="10dp"
-                android:text="All" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_pizza"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="Pizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-            <Space android:layout_width="12dp" android:layout_height="wrap_content"/>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_sides"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="Sides"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-            <TextView
-                android:id="@+id/chip_pizza"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/category_chip_bg"
-                android:padding="10dp"
-                android:text="Pizza" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_drinks"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:text="Drinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.chip.ChipGroup>
 
-            <Space android:layout_width="12dp" android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/chip_sides"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/category_chip_bg"
-                android:padding="10dp"
-                android:text="Sides" />
-
-            <Space android:layout_width="12dp" android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/chip_drinks"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/category_chip_bg"
-                android:padding="10dp"
-                android:text="Drinks" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!-- Featured (horizontal RecyclerView placeholder) -->
+    <!-- Featured -->
     <TextView
         android:id="@+id/tvFeatured"
+        android:text="Featured"
+        android:textStyle="bold"
+        android:textSize="18sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Featured"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/horizontalCategories"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/chipGroup"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFeatured"
         android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:clipToPadding="false"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/tvFeatured"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Popular near you: vertical list placeholder -->
+    <!-- Popular -->
     <TextView
         android:id="@+id/tvPopular"
+        android:text="Popular"
+        android:textStyle="bold"
+        android:textSize="18sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Popular near you"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/rvFeatured"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -199,35 +137,35 @@
         android:id="@+id/rvPopular"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:nestedScrollingEnabled="false"
         app:layout_constraintTop_toBottomOf="@id/tvPopular"
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Bottom navigation -->
+    <!-- FAB Cart -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCart"
+        android:contentDescription="Cart"
+        android:src="@android:drawable/ic_menu_share"
+        app:tint="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/nav_background"
-        app:itemIconTint="@android:color/white"
-        app:itemTextColor="@android:color/white"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Floating cart FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabCart"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/ic_cart"
-        app:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="18dp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

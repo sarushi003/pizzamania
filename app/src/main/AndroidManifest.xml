@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,81 +16,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pizzamania">
+
+        <!-- Launcher -->
         <activity
-            android:name=".OrderActivity"
-            android:exported="false" />
-        <activity
-            android:name=".cart_item_rowActivity"
+            android:name="com.example.pizzamania.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Launcher Activity (App starts here) -->
-        <activity
-            android:name=".Splash_Page_Activity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- Other Activities (No MAIN/LAUNCHER needed) -->
-        <activity
-            android:name=".bottom_nav_menuActivity"
-            android:exported="true" />
-        <activity
-            android:name=".bottom_nav_menu"
-            android:exported="true" />
-        <activity
-            android:name=".Add_MenuActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Orders_viewActivity2"
-            android:exported="true" />
-        <activity
-            android:name=".Admin_dashActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Admin_registrationActivity"
-            android:exported="true" />
-        <activity
-            android:name=".order_trackingActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Order_sumActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Check_outActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Cart_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Item_Detail_Activity2"
-            android:exported="true" />
-        <activity
-            android:name=".Menu_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Profile_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Home_pageActivity"
-            android:exported="true" />
-        <activity
-            android:name=".user_registrationActivity"
-            android:exported="true" />
-        <activity
-            android:name=".login_pageActivity2"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".registerActivity"
-            android:exported="true" />
+        <!-- Others -->
+        <activity android:name="com.example.pizzamania.MainActivity" android:exported="false" />
+
+        <activity android:name="com.example.pizzamaniya.LoginPageActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.HomePageActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.AdminRegistrationActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.UserRegistrationActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.AdminDashActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.AddMenuActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.CheckoutActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.OrderActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.OrderSummaryActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.OrderTrackingActivity" android:exported="false" />
+        <activity android:name="com.example.pizzamaniya.ProfileActivity" android:exported="false" />
+
+        <activity android:name="com.example.pizzamania.Cart_Activity" android:exported="false" />
+        <activity android:name="com.example.pizzamania.Orders_viewActivity2" android:exported="false" />
+        <activity android:name="com.example.pizzamania.bottom_nav_menuActivity" android:exported="false" />
     </application>
-
 </manifest>

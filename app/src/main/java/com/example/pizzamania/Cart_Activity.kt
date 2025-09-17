@@ -8,6 +8,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pizzamania.R
+import com.example.pizzamaniya.CheckoutActivity // <- Use the real activity
 
 class Cart_Activity : AppCompatActivity() {
 
@@ -22,31 +24,26 @@ class Cart_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
 
-        // 🔹 UI references
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
         val btnNext = findViewById<ImageButton>(R.id.btnNext)
         val btnCheckout = findViewById<Button>(R.id.btnCheckout)
         val layoutCartItems = findViewById<LinearLayout>(R.id.layoutCartItems)
 
-        // 🔹 Load cart items dynamically
+        // Load cart items dynamically
         loadCartItems(layoutCartItems)
 
-        // 🔹 Back button → finish activity
-        btnBack.setOnClickListener {
-            finish()
-        }
+        // Back button → finish activity
+        btnBack.setOnClickListener { finish() }
 
-        // 🔹 Next button → Go to CheckoutActivity
+        // Next button → Go to CheckoutActivity
         btnNext.setOnClickListener {
-            val intent = Intent(this, Check_outActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, CheckoutActivity::class.java))
         }
 
-        // 🔹 Checkout button → Go to CheckoutActivity
+        // Checkout button → Go to CheckoutActivity
         btnCheckout.setOnClickListener {
             if (cartItems.isNotEmpty()) {
-                val intent = Intent(this, Check_outActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, CheckoutActivity::class.java))
             } else {
                 Toast.makeText(this, "Your cart is empty!", Toast.LENGTH_SHORT).show()
             }
@@ -71,7 +68,7 @@ class Cart_Activity : AppCompatActivity() {
     }
 }
 
-// 🔹 Data class for cart items
+// Data class for cart items
 data class CartItem(
     val name: String,
     val quantity: Int,
